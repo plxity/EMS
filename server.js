@@ -20,7 +20,6 @@ const connectDB = async () => {
   }
 }
 connectDB();
-
 app.use(express.json({ extended: false }));
 app.use(cors());
 app.use('/api/entry', require('./Routes/api/UserEntry'));
