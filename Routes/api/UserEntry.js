@@ -1,0 +1,178 @@
+const express = require("express");
+const router = express.Router();
+const { check, validationResult } = require("express-validator");
+const UserEntry = require("../../Models/Entry");
+const Nexmo = require("nexmo");
+const nodemailer = require("nodemailer");
+
+const nexmo = new Nexmo({
+  apiKey: "70daa0e4",
+  apiSecret: "8QpK8rs5DnovjvV6"
+});
+
+let transporter = new nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true, // use SSL
+  auth: {
+    user: "purutaneja.com@gmail.com", // generated ethereal user
+    pass: "apoorvtaneja2015<3" // generated ethereal password
+  }
+});
+router.get("/", async (req, res) => {
+  try {
+    const entry = await UserEntry.find();
+    res.json(entry);
+  } catch (err) {
+    res.status(500).send("Server Error");
+  }
+});
+router.post(
+  "/",
+  [
+    check("visitorName", "Name is required")
+      .not()
+      .isEmpty(),
+    check("visitorEmail", "Please include a valid email").isEmail(),
+    check("hostName", "Name is required")
+      .not()
+      .isEmpty(),
+    check("hostEmail", "Please include a valid email").isEmail(),
+    check("hostPhone", "Please include a valid phone number").isLength({
+      min: 12,
+      max: 12
+    }),
+    check("visitorPhone", "Please include a valid phone number").isLength({
+      min: 12,
+      max: 12
+    })
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    try {
+      const {
+        visitorName,
+        visitorEmail,
+        hostName,
+        hostEmail,
+        hostPhone,
+        visitorPhone
+      } = req.body;
+      let entry = new UserEntry({
+        visitorName,
+        visitorEmail,
+        hostName,
+        hostEmail,
+        hostPhone,
+        visitorPhone
+      });
+      const post = await entry.save();
+      const output = `
+    <p>You have a new visitor</p>
+    <h3>Contact Details</h3>
+    <ul>  
+      <li>Name: ${req.body.visitorName}</li>
+      <li>Email: ${req.body.visitorEmail}</li>
+      <li>Contact Number: ${req.body.visitorPhone}</li>
+    </ul>`;
+
+      // setup email data with unicode symbols
+      let mailOptions = {
+        from: '"Visitor Request" purutaneja.com@gmail.com', // sender address
+        to: `${hostEmail}`, // list of receivers
+        subject: "New Visitor Notification", // Subject line
+        text: "Hello world?", // plain text body
+        html: output // html body
+      };
+
+      ////////////////////////////// Send EMAIL to Host/////////////////////////////////
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log("Message sent: %s", info.messageId);
+        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+      });
+
+      /////////////////////////// Send SMS to Host /////////////////////////////
+
+      const msgText = ` Name - ${visitorName}, Email - ${visitorEmail}, No. - ${visitorPhone} `;
+      nexmo.message.sendSms(
+        "+91 98344 12453",
+        req.body.hostPhone,
+        msgText,
+        { type: "unicode" },
+        (err, responseData) => {
+          if (responseData) {
+            console.log(responseData);
+          }
+        }
+      );
+      res.json(post);
+    } catch (err) {
+      res.status(500).send("Server Error");
+    }
+  }
+);
+
+router.put("/", async (req, res) => {
+  try {
+    const findEntry = await UserEntry.findById(req.body.entryId);
+    if (findEntry.visitorCheckout != null) {
+      return res.status(403).send("Already Session Ended");
+    }
+    const entry = await UserEntry.findByIdAndUpdate(
+      req.body.entryId,
+      {
+        visitorCheckout: new Date().getTime()
+      },
+      { new: true }
+    );
+
+    const {
+      visitorCheckin,
+      visitorCheckout,
+      hostName,
+      visitorName,
+      visitorPhone,
+      visitorEmail
+    } = await entry;
+    console.log(entry);
+    const output = `
+    <h3>Your Visit Details</h3>
+    <p>Contact Details</p>
+    <ul>
+      <li>Name: ${visitorName}</li>
+      <li>Email: ${visitorEmail}</li>
+      <li>Contact Number: ${visitorPhone}</li>
+      <li>Host Name: ${hostName}</li>
+      <li>CheckedIn: ${visitorCheckin}</li>
+      <li>CheckedOut: ${visitorCheckout}</li>
+    </ul>`;
+    // setup email data with unicode symbols
+    let mailOptions = {
+      from: '"Visit Information" purutaneja.com@gmail.com', // sender address
+      to: `${visitorEmail}`, // list of receivers
+      subject: "Your Visit Information", // Subject line
+      text: "Hello world?", // plain text body
+      html: output // html body
+    };
+
+    ////////////////////////////// Send EMAIL to Host/////////////////////////////////
+
+    await transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    });
+    res.json(entry);
+  } catch (err) {
+    res.status(500).send("Server Error");
+  }
+});
+module.exports = router;
