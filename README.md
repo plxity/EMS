@@ -1,4 +1,4 @@
-# Rentomojo assignment
+# Assignment
 
 ## How to start this application?
 
@@ -9,7 +9,7 @@
 
 # add uri of your mongodb connection for example
 
- "mongoURI": "mongodb://127.0.0.1/rento1",
+ "mongoURI": "mongodb://127.0.0.1/anydbname",
  
 ```
 
