@@ -10,7 +10,7 @@
 # add uri of your mongodb connection for example
 
  "mongoURI": "mongodb://127.0.0.1/anydbname",
- 
+
 ```
 
 ```bash
@@ -24,14 +24,19 @@ npm install
 # Run both Express & React from root
 npm run dev
 ```
+
 ## Tech Stack
 
-1) ReactJS
-2) NodeJS
-3) ExpressJS
-4) MongoDB
+1. ReactJS
+2. NodeJS
+3. ExpressJS
+4. MongoDB
 
 ## Deployed Link
+
+## Images
+
+[<img src="./capture.png" style="width: 100%; height:100%;" />]
 
 ## App Info
 
@@ -41,4 +46,3 @@ As the app loads up, a form is displayed in which you can enter the details and 
 ### Author
 
 Apoorv Taneja
-
