@@ -72,7 +72,7 @@ const UserEntry = ({ addEntry }) => {
           </ul>
         </div>
         <div className="contact">
-          <h3>Enter visiter details</h3>
+          <h3>Enter visitor details</h3>
           <form onSubmit={e => onSubmit(e)}>
             <p>
               <label>Name</label>
