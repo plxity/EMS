@@ -15,8 +15,8 @@ let transporter = new nodemailer.createTransport({
   port: 465,
   secure: true, // use SSL
   auth: {
-    user: "purutaneja.com@gmail.com", // generated ethereal user
-    pass: "apoorvtaneja2015<3" // generated ethereal password
+    user: "noreplyproject8@gmail.com", // generated ethereal user
+    pass: "Project@1234" // generated ethereal password
   }
 });
 router.get("/", async (req, res) => {
@@ -70,6 +70,16 @@ router.post(
         visitorPhone
       });
       const post = await entry.save();
+      var today = new Date();
+      var date =
+        today.getFullYear() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getDate();
+      var time =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      var dateTime = date + " " + time;
       const output = `
     <p>You have a new visitor</p>
     <h3>Contact Details</h3>
@@ -77,6 +87,7 @@ router.post(
       <li>Name: ${req.body.visitorName}</li>
       <li>Email: ${req.body.visitorEmail}</li>
       <li>Contact Number: ${req.body.visitorPhone}</li>
+      <li>${dateTime} IST</li>
     </ul>`;
 
       // setup email data with unicode symbols
@@ -91,7 +102,7 @@ router.post(
       ////////////////////////////// Send EMAIL to Host/////////////////////////////////
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-          return console.log(error);
+          return res.status(500).send("Server Error");
         }
         console.log("Message sent: %s", info.messageId);
         console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
@@ -170,7 +181,8 @@ router.put("/", async (req, res) => {
       console.log("Message sent: %s", info.messageId);
       console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     });
-    res.json(entry);
+    const all = await UserEntry.find();
+    res.json(all);
   } catch (err) {
     res.status(500).send("Server Error");
   }

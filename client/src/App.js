@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Routes from "./components/routing/Routes";
+import { Provider } from "react-redux";
+import Store from './Store';
+import { NotificationContainer } from "react-notifications";
+import "react-notifications/lib/notifications.css";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={Store}>
+      <Router>
+        <Fragment>
+          <Switch>
+            <Route component={Routes} />
+          </Switch>
+          <NotificationContainer/>
+        </Fragment>
+      </Router>
+    </Provider>
   );
-}
+};
 
 export default App;
