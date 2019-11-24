@@ -36,7 +36,7 @@ npm run dev
 
 ## Images
 
-[<img src="./capture.png" style="width: 100%; height:100%;" />]
+<img src="./capture.png" style="width: 100%; height:100%;" />
 
 ## App Info
 
