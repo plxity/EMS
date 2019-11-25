@@ -24,15 +24,16 @@ const UserEntry = ({ addEntry }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    addEntry(formData);
-    setFormData({
-      visitorEmail: "",
-      visitorName: "",
-      visitorPhone: "",
-      hostName: "",
-      hostEmail: "",
-      hostPhone: ""
-    });
+    addEntry(formData).then(() =>
+      setFormData({
+        visitorEmail: "",
+        visitorName: "",
+        visitorPhone: "",
+        hostName: "",
+        hostEmail: "",
+        hostPhone: ""
+      })
+    );
   };
 
   return (

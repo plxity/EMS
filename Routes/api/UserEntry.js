@@ -81,16 +81,16 @@ router.post(
         today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
       var dateTime = date + " " + time;
       const output = `
-    <p>You have a new visitor</p>
-    <h3>Contact Details</h3>
+    <h1>You have a new visitor</h1>
+    <h2>Contact Details</h2></p>
     <ul>  
-      <li>Name: ${req.body.visitorName}</li>
-      <li>Email: ${req.body.visitorEmail}</li>
-      <li>Contact Number: ${req.body.visitorPhone}</li>
-      <li>${dateTime} IST</li>
+      <li><h3>Name: ${req.body.visitorName}</h3></li>
+      <li><h3>Email: ${req.body.visitorEmail}</h3></li>
+      <li><h3>Contact Number: ${req.body.visitorPhone}</h3></li>
+      <li><h3>Date and Time: ${dateTime} IST</h3></li>
     </ul>`;
 
-      // setup email data with unicode symbols
+      // setup email data with unic</h4>ode symbols
       let mailOptions = {
         from: '"Visitor Request" purutaneja.com@gmail.com', // sender address
         to: `${hostEmail}`, // list of receivers
@@ -149,19 +149,19 @@ router.put("/", async (req, res) => {
       hostName,
       visitorName,
       visitorPhone,
-      visitorEmail
+      visitor
     } = await entry;
     console.log(entry);
     const output = `
-    <h3>Your Visit Details</h3>
-    <p>Contact Details</p>
+    <h2>Your Visit Details</h2>
+    <h3>Contact Details</h3>
     <ul>
-      <li>Name: ${visitorName}</li>
-      <li>Email: ${visitorEmail}</li>
-      <li>Contact Number: ${visitorPhone}</li>
-      <li>Host Name: ${hostName}</li>
-      <li>CheckedIn: ${visitorCheckin}</li>
-      <li>CheckedOut: ${visitorCheckout}</li>
+      <li><h3>Name: ${visitorName}</h3></li>
+      <li><h3>Email: ${visitorEmail}</h3></li>
+      <li><h3>Contact Number: ${visitorPhone}</h3></li>
+      <li><h3>Host Name: ${hostName}</h3></li>
+      <li><h3>CheckedIn: ${visitorCheckin}</h3></li>
+      <li><h3>CheckedOut: ${visitorCheckout}</h3></li>
     </ul>`;
     // setup email data with unicode symbols
     let mailOptions = {
@@ -176,7 +176,7 @@ router.put("/", async (req, res) => {
 
     await transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        return console.log(error);
+        return res.status(500).send("Server Error");
       }
       console.log("Message sent: %s", info.messageId);
       console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
