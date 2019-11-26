@@ -67,6 +67,16 @@ npm run dev
 
 <img src="./folder.png" style="width: 50%; height:100%;" />
 
+## NPM packages used
+
+- Frontend
+
+    <img src="./frontend.png" style="width: 60%; height:100%;" />
+
+- Backend 
+
+    <img src="./backend.png" style="width: 60%; height:100%;" />
+
 ## Images
 
 <img src="./capture.png" style="width: 100%; height:100%;" />
