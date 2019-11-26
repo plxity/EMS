@@ -20,7 +20,7 @@ npm install
 # Run both Express & React from root
 npm run dev
 ```
-
+### Important 
 Change default.json file in config folder this file is located in config/default.json
 
 ```
