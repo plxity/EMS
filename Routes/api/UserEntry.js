@@ -4,19 +4,29 @@ const { check, validationResult } = require("express-validator");
 const UserEntry = require("../../Models/Entry");
 const Nexmo = require("nexmo");
 const nodemailer = require("nodemailer");
+const config = require("config");
+
+// Get details from Config
+const emailHost = config.get('EMAIL_HOST');
+const emailPass = config.get('EMAIL_PASSWORD');
+const emailPort = config.get('EMAIL_PORT');
+const emailUser= config.get('EMAIL_USER');
+const msgApi = config.get('API_KEY');
+const msgApisecret = config.get('API_SECRET');
+const phoneNumber = config.get('PHONE_NUMBER')
 
 const nexmo = new Nexmo({
-  apiKey: "70daa0e4",
-  apiSecret: "8QpK8rs5DnovjvV6"
+  apiKey: msgApi,
+  apiSecret: msgApisecret
 });
 
 let transporter = new nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
+  host: emailHost,
+  port: emailPort,
   secure: true, // use SSL
   auth: {
-    user: "noreplyproject8@gmail.com", // generated ethereal user
-    pass: "Project@1234" // generated ethereal password
+    user: emailUser, // generated ethereal user
+    pass: emailPass // generated ethereal password
   }
 });
 router.get("/", async (req, res) => {
@@ -112,7 +122,7 @@ router.post(
 
       const msgText = ` Name - ${visitorName}, Email - ${visitorEmail}, No. - ${visitorPhone} `;
       nexmo.message.sendSms(
-        "+91 98344 12453",
+        phoneNumber,
         req.body.hostPhone,
         msgText,
         { type: "unicode" },

@@ -1,3 +1,10 @@
 {
-    "mongoURI": "mongodb+srv://plxity:apoorvtaneja2015<3@cluster0-py337.mongodb.net/test?retryWrites=true&w=majority"
+    "mongoURI": "mongodb://127.0.0.1/entrymanagement",
+    "EMAIL_HOST": "smtp.gmail.com",
+    "EMAIL_PORT": "465",
+    "EMAIL_USER": "Enter Email Address",
+    "EMAIL_PASSWORD": "Enter Email Password",
+    "API_KEY": "NEXMO API KEY",
+    "API_SECRET": "NEXMO SECRET KEY",
+    "PHONE_NUMBER": "Enter Phone Number" 
 }
