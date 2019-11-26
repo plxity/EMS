@@ -20,6 +20,8 @@ npm install
 
 Change default.json file in config folder this file is located in config/default.json
 
+- Create free account at Nexmo (https://www.nexmo.com/)  for generating API KEY and API SECRET KEY.
+
 ```
  Add uri of your mongodb connection for example
 
@@ -47,7 +49,7 @@ Change default.json file in config folder this file is located in config/default
 
 ```
 
-```
+```bash
 
 # Run both Express & React from root
 npm run dev
