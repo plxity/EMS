@@ -8,7 +8,7 @@ Given the visitors that we have in office and outside, there is a need to for an
 
 ```bash
 #Clone the repository
-`git clone https://github.com/plxity/EMS`
+git clone https://github.com/plxity/EMS
 
 # Install server dependencies
 npm install
@@ -16,17 +16,15 @@ npm install
 # Install client dependencies
 cd client
 npm install
-
-# Run both Express & React from root
-npm run dev
 ```
-### Important 
+
 Change default.json file in config folder this file is located in config/default.json
 
 ```
  Add uri of your mongodb connection for example
 
  "mongoURI": "mongodb://127.0.0.1/anydbname"
+
 
  Add Email account for sending E-mail via node-mailer for example
 
@@ -49,6 +47,12 @@ Change default.json file in config folder this file is located in config/default
 
 ```
 
+```
+
+# Run both Express & React from root
+npm run dev
+
+```
 ## Tech Stack
 
 1. ReactJS
