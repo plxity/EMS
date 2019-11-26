@@ -6,39 +6,9 @@ Given the visitors that we have in office and outside, there is a need to for an
 
 ## How to start this application?
 
-Change default.json file in config folder this file is located in config/default.json
-
-```
- Add uri of your mongodb connection for example
-
- "mongoURI": "mongodb://127.0.0.1/anydbname"
-
-
- Add Email account for sending E-mail via node-mailer for example
-
- "EMAIL_HOST": "smtp.gmail.com"
-
- "EMAIL_PORT": "465",
-
- "EMAIL_USER": "Enter Email Address",
-
- "EMAIL_PASSWORD": "Enter Email Password"
-
-
- Add details for sending message's via 'Nexmo' API for example
-
- "API_KEY": "NEXMO API KEY",
-
- "API_SECRET": "NEXMO SECRET KEY",
-
- "PHONE_NUMBER": "+919876543210" (Mention Country Code),
-
-
-```
-
 ```bash
 #Clone the repository
-https://github.com/plxity/EMS
+`git clone https://github.com/plxity/EMS`
 
 # Install server dependencies
 npm install
@@ -49,6 +19,34 @@ npm install
 
 # Run both Express & React from root
 npm run dev
+```
+
+Change default.json file in config folder this file is located in config/default.json
+
+```
+ Add uri of your mongodb connection for example
+
+ "mongoURI": "mongodb://127.0.0.1/anydbname"
+
+ Add Email account for sending E-mail via node-mailer for example
+
+ "EMAIL_HOST": "smtp.gmail.com"
+
+ "EMAIL_PORT": "465"
+
+ "EMAIL_USER": "Enter Email Address"
+
+ "EMAIL_PASSWORD": "Enter Email Password"
+
+
+ Add details for sending message's via 'Nexmo' API for example
+
+ "API_KEY": "NEXMO API KEY"
+
+ "API_SECRET": "NEXMO SECRET KEY"
+
+ "PHONE_NUMBER": "+919876543210" (Mention Country Code)
+
 ```
 
 ## Tech Stack
