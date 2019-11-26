@@ -55,6 +55,7 @@ Change default.json file in config folder this file is located in config/default
 2. NodeJS
 3. ExpressJS
 4. MongoDB
+5. External API - Nexmo (for sending messages)
 
 ## Folder Structure:
 
