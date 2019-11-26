@@ -149,8 +149,8 @@ router.put("/", async (req, res) => {
       hostName,
       visitorName,
       visitorPhone,
-      visitor
-    } = await entry;
+      visitorEmail
+    } = entry;
     console.log(entry);
     const output = `
     <h2>Your Visit Details</h2>
@@ -176,7 +176,7 @@ router.put("/", async (req, res) => {
 
     await transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        return res.status(500).send("Server Error");
+       console.log(err);
       }
       console.log("Message sent: %s", info.messageId);
       console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));

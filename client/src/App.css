@@ -187,6 +187,16 @@ a {
     text-align: left;
   }
 }
+
+/* NOT FOUND */
+.not-found{
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+  align-items: center;
+}
 /* SMALL SCREENS */
 @media (max-width: 600px) {
   .navigation {

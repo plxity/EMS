@@ -32,8 +32,6 @@ npm run dev
 3. ExpressJS
 4. MongoDB
 
-## Deployed Link
-
 ## Images
 
 <img src="./capture.png" style="width: 100%; height:100%;" />
