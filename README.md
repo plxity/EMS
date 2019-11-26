@@ -6,18 +6,23 @@ Given the visitors that we have in office and outside, there is a need to for an
 
 ## How to start this application?
 
+Change default.json file in config folder
+
+this file is located in config/default.json
+
 ```
-# change default.json file in config folder
+ Add uri of your mongodb connection for example
 
-# this file is located in config/default.json
+ "mongoURI": "mongodb://127.0.0.1/anydbname"
 
-# add uri of your mongodb connection for example
-
- "mongoURI": "mongodb://127.0.0.1/anydbname",
+ 
 
 ```
 
 ```bash
+#Clone the repository
+https://github.com/plxity/EMS
+
 # Install server dependencies
 npm install
 
