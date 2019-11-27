@@ -97,11 +97,13 @@ Event Management Service is based on an idea which stores data of a visitor and 
 
     <img src="./backend.png" style="width: 60%; height:100%;" />
 
-## Images
+## Application Images
 
 <img src="./capture.png" style="width: 100%; height:100%;" />
 
-## App Info
+<img src="./current.png" style="width: 100%; height:100%;" />
+
+## Application Information
 
 This is an entry management system used for tracking the entry and exit details of a person.
 As the app loads up, a form is displayed in which you can enter the details and email & msg will be sent to host consisting of your details. When you have to end your meeting/session, Go to 'Current Session' tab and end your session. This will send an email to a visitor regarding his/her visit.
