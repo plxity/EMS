@@ -93,21 +93,21 @@ Event Management Service is based on an idea which stores data of a visitor and 
 
 - Frontend
 
-    1. axios
-    2. react-notifications
-    3. redux-thunk
-    4. react-redux
-    5. redux
+- axios
+    - react-notifications
+    - redux-thunk
+    - react-redux
+    - redux
 
 - Backend 
 
-    1. concurrently
-    2. config
-    3. cors
-    4. express-validator
-    5. nexmo
-    6. nodemailer
-    7. nodemon
+    - concurrently
+    - config
+    - cors
+    - express-validator
+    - nexmo
+    - nodemailer
+    - nodemon
 
 ## Application Images
 
