@@ -68,7 +68,7 @@ npm run dev
 Event Management Service is based on an idea which stores data of a visitor and host in the database and as the data is saved timestamp is also stored as well & SMS and E-mail is sent to the host. When a session is ended, the timestamp is also stored and then mail to the visitor is send node-mailer. Once a session has ended user is not allowed to change the timestamp.
 
 ## Database Fields
-
+```
  |__entrySchema
             |___ visitorName
             |___ visitorEmail
@@ -79,7 +79,7 @@ Event Management Service is based on an idea which stores data of a visitor and 
             |___ hostEmail
             |___ hostPhone
 
-
+```
 ## Folder Structure
 
 <img src="./folder.png" style="width: 50%; height:100%;" />
