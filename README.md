@@ -54,6 +54,8 @@ Change default.json file in config folder this file is located in config/default
 # Run both Express & React from root
 npm run dev
 
+The App will start at http://localhost:3000/
+
 ```
 ## Tech Stack
 
@@ -85,17 +87,27 @@ Event Management Service is based on an idea which stores data of a visitor and 
 ```
 ## Folder Structure
 
-<img src="./folder.png" style="width: 50%; height:100%;" />
+<img src="./fs.png" style="width: 50%; height:100%;" />
 
 ## NPM packages used
 
 - Frontend
 
-    <img src="./frontend.png" style="width: 60%; height:100%;" />
+    1. axios
+    2. react-notifications
+    3. redux-thunk
+    4. react-redux
+    5. redux
 
 - Backend 
 
-    <img src="./backend.png" style="width: 60%; height:100%;" />
+    1. concurrently
+    2. config
+    3. cors
+    4. express-validator
+    5. nexmo
+    6. nodemailer
+    7. nodemon
 
 ## Application Images
 
