@@ -70,7 +70,7 @@ The App will start at http://localhost:3000/
 
 ## Approach
 
-Event Management Service is based on an idea which stores data of a visitor and host in the database and as the data is saved timestamp is also stored as well & SMS and E-mail is sent to the host. When a session is ended, the timestamp is also stored and then mail to the visitor is send node-mailer. Once a session has ended user is not allowed to change the timestamp.
+Event Management Service is based on an idea which stores data of a visitor and host in the database and as the data is saved timestamp is also stored as well. SMS and E-mail is sent to the host consisting the details of visitor. When a session is ended, the timestamp is also stored and then mail is send to the visitor via node-mailer. Once a session has ended user is not allowed to change the timestamp.
 
 ## Database Fields
 ```
@@ -114,6 +114,9 @@ Event Management Service is based on an idea which stores data of a visitor and 
 <img src="./capture.png" style="width: 100%; height:100%;" />
 
 <img src="./current.png" style="width: 100%; height:100%;" />
+
+<img src="./email.png" style="width: 60%; height:100%;" />
+
 
 ## Application Information
 
