@@ -57,11 +57,14 @@ npm run dev
 ```
 ## Tech Stack
 
-1. ReactJS
-2. NodeJS
-3. ExpressJS
-4. MongoDB
-5. External API - Nexmo (for sending messages)
+1. Javascript: Primary programing language
+2. CSS: Styling web pages, HTML files
+3. ReactJS: Javascript library for building User Interfaces
+4. Redux: Managing global state
+5. NodeJS: Backend Framework
+6. ExpressJS: Backend library
+7. MongoDB: Database for storing entry
+8. External API: Nexmo (for sending messages)
 
 ## Approach
 
