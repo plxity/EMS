@@ -93,7 +93,7 @@ Event Management Service is based on an idea which stores data of a visitor and 
 
 - Frontend
 
-- axios
+    - axios
     - react-notifications
     - redux-thunk
     - react-redux
