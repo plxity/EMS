@@ -70,7 +70,31 @@ The App will start at http://localhost:3000/
 
 ## Approach
 
-Event Management Service is based on an idea which stores data of a visitor and host in the database and as the data is saved timestamp is also stored as well. SMS and E-mail is sent to the host consisting the details of visitor. When a session is ended, the timestamp is also stored and then mail is send to the visitor via node-mailer. Once a session has ended user is not allowed to change the timestamp.
+Entry Management System is software which can be used in any office/organisation to track the details of visitors and host. When the application loads up, a form is displayed which contains various field like: -
+
+    - Visitor Name
+    - Visitor Email
+    - Visitor Phone no.
+    - Host Name
+    - Host Email
+    - Host Phone no.
+
+When the form is submitted by the person, a POST request is sent to the API  `/api/entry` and the data is stored in MongoDB. The default value of CheckOut is set to NULL. This will request node-mailer to send an Email to host to inform about the person’s visit. Simultaneously an SMS will be sent using nexmo API to the host.
+
+The project has two different tabs:
+
+1. Current Session
+
+2. Ended Session
+
+### Current Session
+	
+This tab contains details of visitors which are present in the office. The details are fetched using GET request on API `/api/entry`. Then the data is filtered using the checkout time field on the frontend side. If the field is `NULL` the data will be displayed with an “End Session” button. When a user clicks on it a PUT request is sent the API `/api/entry`. This will update the record with checkout time. 
+
+### Ended Session
+
+This tab contains the list of people whose session has ended. The details are fetched by sending a GET to request to API `/api/entry`. This will display all the details of the visitor and host along with CheckIn and CheckOut time of the visitor.
+
 
 ## Database Fields
 ```

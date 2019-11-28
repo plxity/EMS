@@ -1,3 +1,4 @@
+
 {
     "mongoURI": "mongodb://127.0.0.1/entrymanagement",
     "EMAIL_HOST": "smtp.gmail.com",
