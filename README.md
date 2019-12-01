@@ -144,7 +144,9 @@ This tab contains the list of people whose session has ended. The details are fe
 
 <img src="./current.png" style="width: 100%; height:100%;" />
 
-<img src="./email.png" style="width: 30%; height:100%;" />
+<img src="./email.png" style="width: 30%; height:70%;" />
+
+<img src="./visitor.png" style="width: 30%; height:70%;" />
 
 
 ## Application Information
