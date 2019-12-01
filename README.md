@@ -147,7 +147,7 @@ This tab contains the list of people whose session has ended. The details are fe
 ### Host Email
 <img src="./email.png" style="width: 30%; height:70%;" />
 
-### Visior Email
+### Visitor Email
 <img src="./visitor.png" style="width: 30%; height:70%;" />
 
 
