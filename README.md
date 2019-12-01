@@ -22,7 +22,7 @@ Change default.json file in config folder this file is located in config/default
 
 - Create free account at Nexmo (https://www.nexmo.com/)  for generating API KEY and API SECRET KEY.
 
-> **Note:** As of now, all the credentials of node-mailer and nexmo API is preset. In case you want to change them follow the next step. Otherwise, skip to next step.
+> **Note:** As of now, all the credentials of node-mailer and nexmo API is present. In case you want to change them follow the next step. Otherwise, skip to next step.
 
 ```
  Add uri of your mongodb connection for example
@@ -91,7 +91,7 @@ The project has two different tabs:
 
 ### Current Session
 	
-This tab contains details of visitors which are present in the office. The details are fetched using GET request on API `/api/entry`. Then the data is filtered using the checkout time field on the frontend side. If the field is `NULL` the data will be displayed with an “End Session” button. When a user clicks on it a PUT request is sent the API `/api/entry`. This will update the record with checkout time. 
+This tab contains details of visitors which are present in the office. The details are fetched using GET request on API `/api/entry`. Then the data is filtered using the checkout time field on the frontend side. If the field is `NULL` the data will be displayed with an “End Session” button. When a user clicks on it, a PUT request is sent the API `/api/entry`. This will update the record with checkout time. 
 
 ### Ended Session
 
@@ -144,7 +144,7 @@ This tab contains the list of people whose session has ended. The details are fe
 
 <img src="./current.png" style="width: 100%; height:100%;" />
 
-<img src="./email.png" style="width: 60%; height:100%;" />
+<img src="./email.png" style="width: 30%; height:100%;" />
 
 
 ## Application Information
