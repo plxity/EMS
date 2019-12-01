@@ -145,7 +145,7 @@ This tab contains the list of people whose session has ended. The details are fe
 <img src="./current.png" style="width: 100%; height:100%;" />
 
 ### Host Email
-<img src="./email.png" style="width: 30%; height:70%;" />
+<img src="./email.png" width="400" height="500" />
 
 ### Host SMS
 <img src="./sms.png" width="320" height="500" />
