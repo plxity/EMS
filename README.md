@@ -111,6 +111,9 @@ This tab contains the list of people whose session has ended. The details are fe
             |___ hostPhone
 
 ```
+<img src="./database.png" style="width: 30%; height:100%;" />
+
+
 ## Folder Structure
 
 <img src="./fs.png" style="width: 50%; height:100%;" />
