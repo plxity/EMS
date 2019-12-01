@@ -102,7 +102,7 @@ router.post(
 
       // setup email data with unic</h4>ode symbols
       let mailOptions = {
-        from: '"Visitor Request" purutaneja.com@gmail.com', // sender address
+        from: `"Visitor Request" ${emailUser}`, // sender address
         to: `${hostEmail}`, // list of receivers
         subject: "New Visitor Notification", // Subject line
         text: "Hello world?", // plain text body
