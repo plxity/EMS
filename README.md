@@ -4,6 +4,11 @@
 
 Given the visitors that we have in office and outside, there is a need to for an entry management software.
 
+## Requirements
+
+1. Node >= 6.0
+2. MongoDB 
+
 ## How to start this application?
 
 ```bash
