@@ -27,7 +27,7 @@ Change default.json file in config folder this file is located in config/default
 
 - Create free account at Nexmo (https://www.nexmo.com/)  for generating API KEY and API SECRET KEY.
 
-> **Note:** As of now, all the credentials of node-mailer and nexmo API is present. In case you want to change them follow the next step. Otherwise, skip to next step.
+> **Note:** As of now, all the credentials of node-mailer, nexmo API and MongoDB URI (locally) is present. In case you want to change them follow the next step. Otherwise, skip to next step.
 
 ```
  Add uri of your mongodb connection for example
